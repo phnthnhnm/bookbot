@@ -15,3 +15,16 @@ def get_char_count(text):
             dict[char] = 1
             
     return dict
+
+def sort_on_count(dict):
+    return dict["count"]
+
+def get_sorted_list(char_count):
+    sorted_list = []
+    
+    for char, count in char_count.items():
+        sorted_list.append({'char': char, 'count': count})
+
+    sorted_list.sort(key=sort_on_count, reverse=True)
+
+    return sorted_list
