@@ -1,12 +1,18 @@
 def get_book_text(file):
     file_contents = file.read()
+
     return file_contents
 
+def number_of_words(text):
+    words = text.split()
+    num_words = len(words)
+
+    return num_words
+
 def main():
-    # Open the file in read mode
     with open('books/frankenstein.txt', 'r') as file:
-        # Read the content of the file
         text = get_book_text(file)
-        print(text)    
+        num_words = number_of_words(text)
+        print(f'{num_words} words found in the document')
 
 main()
